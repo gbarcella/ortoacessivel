@@ -410,7 +410,9 @@
                     <h3 class="mb-0">Quero utilizar o sistema na minha organização!</h3>
                 </div>
                 <div class="card-body">
-                    <form class="form" role="form" autocomplete="off">
+                    <form class="form" role="form" autocomplete="off" action="/store-solicitacao" method="post">
+                        @csrf
+                        @method('post')
                         <fieldset>
                             <label for="nome2" class="mb-0">Nome</label>
                             <div class="row mb-1">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Interesse;
+use App\Solicitacao;
 
 class SiteController extends Controller
 {
@@ -19,9 +20,9 @@ class SiteController extends Controller
     {
         $request->validate([
             'nome1'      => 'required',
-            'telefone1'      => 'required',
+            'telefone1'  => 'required',
             'interesse'  => 'required',
-            'orgao'     => 'required',
+            'orgao'      => 'required',
         ]);
 
         Interesse::create([
@@ -33,5 +34,25 @@ class SiteController extends Controller
         
         return redirect()->route('/')
                         ->with('success', 'Interesse cadastrado com sucesso!');
+    }
+
+    public function storeSolicitacao(Request $request)
+    {
+        $request->validate([
+            'nome2'      => 'required',
+            'telefone2'  => 'required',
+            'email2'     => 'required',
+            'mensagem2'  => 'required',
+        ]);
+
+        Solicitacao::create([
+            'nome'      => $request->get('nome2'),
+            'telefone'  => $request->get('telefone2'),
+            'email'     => $request->get('email2'),
+            'mensagem'  => $request->get('mensagem2'),
+        ]);
+
+        return redirect()->route('/')
+                        ->with('success', 'Solicitação cadastrada com sucesso!');
     }
 }

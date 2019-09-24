@@ -89,8 +89,11 @@ Route::middleware(['auth'])->group(function() {
 	//Rota para acessar solicitacoes de acesso ao sistema
 	Route::get('/solicitacoes', 'SolicitacaoController@index')->name('solicitacoes');
 
-	//Rota para deltear uma solicitacao de acesso ao sistema
+	//Rota para deletar uma solicitacao de acesso ao sistema
 	Route::delete('/solicitacoes-destroy/{solicitacao}', 'SolicitacaoController@destroy')->name('solicitacoes-destroy');
+
+	//Rota para cadastrar uma solicitacao de acesso ao sistema
+	Route::post('/store-solicitacao', 'SiteController@storeSolicitacao')->name('store-solicitacao');
 });
 
 
