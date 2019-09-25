@@ -160,7 +160,7 @@
           <td>{{ $i->interesse }}</td>
           <td>
           <form action="{{ route('destroy-interesse', $i->id) }}" method="POST">  
-            <a class="btn btn-primary" data-toggle="modal" data-target="#modal-edit"><i class="fa fa-edit"></i></a>  
+            <a class="btn btn-primary" data-toggle="modal" data-target="#modal-edit<?php echo $i->id ?>"><i class="fa fa-edit"></i></a>  
 
             @method('DELETE')
             @csrf
@@ -170,7 +170,7 @@
         </tr>
 
 
-    <div class="modal fade" id="modal-edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modal-edit<?php echo $i->id ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -296,7 +296,7 @@
           <td>{{ date( 'd/m/Y' , strtotime($t->prazo))}}</td>
           <td>  
             <form action="{{ route('destroy-tarefa', $t->id) }}" method="POST">
-            <a class="btn btn-primary" data-toggle="modal" data-target="#modal-edit-tarefa"><i class="fa fa-edit"></i></a>
+            <a class="btn btn-primary" data-toggle="modal" data-target="#modal-edit-tarefa<?php echo $t->id ?>"><i class="fa fa-edit"></i></a>
 
             @csrf
             @method('DELETE')
@@ -305,11 +305,7 @@
           </td>
         </tr>
 
-      
-
-    
-
-    <div class="modal fade" id="modal-edit-tarefa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modal-edit-tarefa<?php echo $t->id ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       
       <div class="modal-dialog" role="document">
         <div class="modal-content">
