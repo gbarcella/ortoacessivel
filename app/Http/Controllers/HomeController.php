@@ -36,9 +36,9 @@ class HomeController extends Controller
         $parceiros = Parceiro::where('id_usuario', '=', $id_usuario)->get();
         $count_parceiros = count($parceiros);
 
-        $interesses = Interesse::where('id_usuario', '=', $id_usuario)->paginate(3);
+        $interesses = Interesse::where('id_usuario', '=', $id_usuario)->paginate(3, ['*'], 'interesses');
 
-        $tarefas = Tarefa::where('id_usuario', '=', $id_usuario)->paginate(3);
+        $tarefas = Tarefa::where('id_usuario', '=', $id_usuario)->paginate(3, ['*'], 'tarefas');
 
         //CHART de emprestimos no mes
         $emprestimos_grafico = Emprestimo::where(DB::raw("(DATE_FORMAT(created_at,'%Y'))"),date('Y'))

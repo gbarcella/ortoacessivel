@@ -281,7 +281,7 @@
       <div class="box-body">
         <div class="table-responsive">
 
-  <table class="table " >
+      <table class="table " >
     <thead style="background-color: #605CA8; color: #fff;">
       <tr>
         <th scope="col">Tarefa</th>
@@ -370,9 +370,6 @@
   </div>
 </div>
 
-
-
-
 {!! Charts::scripts() !!}
 {!! $grafico_emprestimos_mes->script() !!}
 {!! $grafico_pessoas_mes->script() !!}
@@ -383,7 +380,6 @@
   crossorigin="anonymous"></script>
 
   <script type="text/javascript">
-
   $(document).ready(function($){
     $('.input_telefone').mask('(00) 00000-0000');
   });
