@@ -17,6 +17,9 @@ Route::get('/', 'SiteController@index')->name('/');
 //Rota para cadastrar interesse pelo website
 Route::post('/store-interesse-website', 'SiteController@storeInteresse')->name('store-interesse-website');
 
+//Rota para cadastrar uma solicitacao de acesso ao sistema
+Route::post('/store-solicitacao', 'SiteController@storeSolicitacao')->name('store-solicitacao');
+
 Auth::routes();
 
 //Rota dashboard
@@ -92,8 +95,7 @@ Route::middleware(['auth'])->group(function() {
 	//Rota para deletar uma solicitacao de acesso ao sistema
 	Route::delete('/solicitacoes-destroy/{solicitacao}', 'SolicitacaoController@destroy')->name('solicitacoes-destroy');
 
-	//Rota para cadastrar uma solicitacao de acesso ao sistema
-	Route::post('/store-solicitacao', 'SiteController@storeSolicitacao')->name('store-solicitacao');
+	
 });
 
 

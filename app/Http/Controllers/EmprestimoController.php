@@ -49,8 +49,8 @@ class EmprestimoController extends Controller
         $id_usuario = Auth::id();
 
         Emprestimo::create([
-            'id_pessoa'            => $request->get('pessoa'),
-            'id_produto'           => $request->get('produto'),
+            'id_pessoa'         => $request->get('pessoa'),
+            'id_produto'        => $request->get('produto'),
             'data_inicio'       => $request->get('datainicio'),
             'data_devolucao'    => $request->get('datadevolucao'),
             'status'            => $request->get('status'),

@@ -29,7 +29,7 @@
       <div class="col-md-8">
         <form action="/search-emprestimos" method="get">
         <div class="input-group col-md-12">
-          <input type="text" class="form-control input" name="search" placeholder="Buscar" />
+          <input type="date" class="form-control input" name="search" placeholder="Buscar" />
             <span class="input-group-btn">
               <button class="btn btn-primary" type="submit">
                 <i class="fa fa-search"></i>
