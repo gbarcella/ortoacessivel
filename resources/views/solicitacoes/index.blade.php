@@ -38,7 +38,7 @@
                     <p>{{$s->telefone}}</p>
                     <p>{{$s->mensagem}}</p>
 
-                    <button type="submit" class="btn btn-danger" style="width: 100%;">Excluir</button>
+                    <button type="submit" class="btn btn-danger" style="width: 100%;" onclick="return confirm('Tem certeza que deseja deletar o registro?')">Excluir</button>
                 </div>
             </form>
         </div>
