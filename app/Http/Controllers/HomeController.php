@@ -10,6 +10,8 @@ use App\Pessoa;
 use App\Parceiro;
 use App\Interesse;
 use App\Tarefa;
+use App\Chamado;
+
 use Charts;
 use DB;
 
@@ -162,5 +164,27 @@ class HomeController extends Controller
 
         return redirect()->route('home')
                         ->with('success', 'Tarefa atualizada com sucesso!');
+    }
+
+    public function storeChamado(Request $request)
+    {
+        $id_usuario = Auth::id();
+
+        $request->validate([
+            'input_titulo_chamado'        => 'required',
+            'input_descricao_chamado'     => 'required',
+            'input_prioridade_chamado'    => 'required',
+        ]);
+
+        Chamado::create([
+            'titulo'        => $request->get('input_titulo_chamado'),
+            'descricao'     => $request->get('input_descricao_chamado'),
+            'prioridade'    => $request->get('input_prioridade_chamado'),
+            'status'        => "Aberto",
+            'id_usuario'    => $id_usuario,
+        ]);
+
+        return redirect()->route('home')
+                        ->with('success', 'Chamado aberto com sucesso!');
     }
 }

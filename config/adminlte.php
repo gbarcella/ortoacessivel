@@ -140,6 +140,11 @@ return [
             'url'         => '/relatorios',
             'icon'        => 'file',
         ],
+        [
+            'text'        => 'Chamados',
+            'url'         => '/chamados',
+            'icon'        => 'envelope',
+        ],
         'ADMINISTRAÇÃO',
         [
             'text'  => 'Usuários',
@@ -153,6 +158,22 @@ return [
             'icon'  => 'unlock-alt',
             'can'   => 'browse-admin'
         ],
+        [
+            'text'    => 'Chamados',
+            'icon'    => 'fas fa-fw fa-share',
+            'submenu' => [
+                [
+                    'text' => 'Abertos',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Concluído',
+                    'url'  => '#',
+                ],
+            ]
+        ]
+
+        
     ],
 
     /*

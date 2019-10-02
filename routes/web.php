@@ -95,7 +95,11 @@ Route::middleware(['auth'])->group(function() {
 	//Rota para deletar uma solicitacao de acesso ao sistema
 	Route::delete('/solicitacoes-destroy/{solicitacao}', 'SolicitacaoController@destroy')->name('solicitacoes-destroy');
 
-	
+	//Rota para cadastrar um chamado de suporte
+	Route::post('/store-chamado', 'HomeController@storeChamado')->name('store-chamado');
+
+	//Rota para listagem de chamados usuario standard
+	Route::get('/chamados', 'ChamadoController@index')->name('chamados');
 });
 
 

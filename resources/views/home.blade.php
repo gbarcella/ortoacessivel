@@ -373,6 +373,59 @@
 {!! Charts::scripts() !!}
 {!! $grafico_emprestimos_mes->script() !!}
 {!! $grafico_pessoas_mes->script() !!}
+
+<div class="row" style="padding: 15px;">
+  <div class="col-md-12">
+    <button class="btn btn-primary" data-toggle="modal" data-target="#modal-new-chamado" style="width: 100%;"><i class="fa fa-envelope-o"></i> Abrir chamado de suporte</button>
+  </div>
+</div>
+
+<div class="modal fade" id="modal-new-chamado"  role="dialog" aria-labelledby="modal-new" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modal-new">Novo chamado de suporte</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+
+        <form action="/store-chamado" method="POST">
+        @csrf
+        
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="input_titulo_chamado">Título</label>
+            <input type="text" class="form-control" id="input_titulo_chamado" name="input_titulo_chamado" placeholder="Título" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="input_descricao_chamado">Descrição</label>
+            <textarea class="form-control" id="input_descricao_chamado" name="input_descricao_chamado" maxlength="191" required></textarea>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="input_prioridade_chamado">Prioridade</label>
+            <select id="input_prioridade_chamado" name="input_prioridade_chamado" class="form-control" required>
+              <option selected disabled value="">Escolha...</option>
+              <option value="Urgente">Urgente</option>
+              <option value="Mediano">Mediana</option>
+              <option value="Leve">Leve</option>
+            </select>
+          </div>
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+      </div>
+    </form>
+      </div>
+
+      
+    </div>
+  </div>
+</div>
       
 <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
