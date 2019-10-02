@@ -164,11 +164,11 @@ return [
             'submenu' => [
                 [
                     'text' => 'Abertos',
-                    'url'  => '#',
+                    'url'  => '/chamados-abertos',
                 ],
                 [
                     'text' => 'Concluído',
-                    'url'  => '#',
+                    'url'  => '/chamados-concluidos',
                 ],
             ]
         ]
