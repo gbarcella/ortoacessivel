@@ -113,6 +113,12 @@ Route::middleware(['auth'])->group(function() {
 	//Rota para usuario standard pesquisa chamado pelo titulo
 	Route::get('/search-chamado-usuario-standard', 'ChamadoController@searchChamadoUsuarioStandard')->name('search-chamado-usuario-standard');
 
+	//Rota para usuario admin pesquisar chamado aberto pelo titulo
+	Route::get('/search-chamado-usuario-admin-aberto', 'ChamadoController@searchChamadoUsuarioAdminAberto')->name('search-chamado-usuario-admin-aberto');
+
+	//Rota para ausuario admin pesquisar chamado fechado pelo titulo
+	Route::get('/search-chamado-usuario-admin-fechado', 'ChamadoController@searchChamadoUsuarioAdminFechado')->name('search-chamado-usuario-admin-fechado');
+
 });
 
 

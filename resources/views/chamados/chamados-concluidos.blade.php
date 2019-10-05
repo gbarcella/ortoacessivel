@@ -23,7 +23,7 @@
     <div class="row">
 
         <div class="col-md-12">
-            <form action="/search-chamado" method="get">
+            <form action="/search-chamado-usuario-admin-fechado" method="get">
                 <div class="input-group col-md-12">
                     <input type="text" class="form-control input" name="search" placeholder="Buscar" />
                     <span class="input-group-btn">
