@@ -116,9 +116,26 @@ Route::middleware(['auth'])->group(function() {
 	//Rota para usuario admin pesquisar chamado aberto pelo titulo
 	Route::get('/search-chamado-usuario-admin-aberto', 'ChamadoController@searchChamadoUsuarioAdminAberto')->name('search-chamado-usuario-admin-aberto');
 
-	//Rota para ausuario admin pesquisar chamado fechado pelo titulo
+	//Rota para usuario admin pesquisar chamado fechado pelo titulo
 	Route::get('/search-chamado-usuario-admin-fechado', 'ChamadoController@searchChamadoUsuarioAdminFechado')->name('search-chamado-usuario-admin-fechado');
 
+	//Rota para usuario editar um chamado
+	Route::get('/edit-chamado/{chamado}', 'ChamadoController@editChamado')->name('edit-chamado');
+
+	//Rota para usuario atualizar um chamado
+	Route::put('/update-chamado/{chamado}', 'ChamadoController@updateChamado')->name('update-chamado');
+
+	//Rota para editar chamado status aberto
+	Route::get('/edit-chamado-aberto/{chamado}', 'ChamadoController@editChamadoAberto')->name('edit-chamado-aberto');
+
+	//Rota para usuario atualizar um chamado aberto
+	Route::put('/update-chamado-aberto/{chamado}', 'ChamadoController@updateChamadoAberto')->name('update-chamado-aberto');
+
+	//Rota para editar chamado status concluido
+	Route::get('/edit-chamado-fechado/{chamado}', 'ChamadoController@editChamadoFechado')->name('edit-chamado-fechado');
+
+	//Rotar para atualizar um chamado fechado
+	Route::put('/update-chamado-fechado/{chamado}', 'ChamadoController@updateChamadoConcluido')->name('update-chamado-fecahdo');
 });
 
 

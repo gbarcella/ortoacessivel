@@ -93,4 +93,86 @@ class ChamadoController extends Controller
 
         return view('chamados.chamados-concluidos', compact('chamados_concluidos'));
     }
+
+    public function editChamado(Chamado $chamado)
+    {
+        return view('chamados.edit-chamado', compact('chamado'));
+    }
+
+    public function updateChamado(Request $request, Chamado $chamado)
+    {
+        $request->validate([
+            'titulo'        => 'required',
+            'prioridade'    => 'required',
+            'descricao'     => 'required',
+        ]);
+
+        $id_usuario = Auth::id();
+
+        $chamado->update([
+            'titulo'        => $request->get('titulo'),
+            'prioridade'    => $request->get('prioridade'),
+            'descricao'     => $request->get('descricao'),
+            'id_usuario'    => $id_usuario,
+        ]);
+
+        return redirect()->route('chamados')
+                        ->with('success', 'Chamado atualizado com sucesso!');
+    }
+
+    public function editChamadoAberto(Chamado $chamado)
+    {
+        return view('chamados.edit-chamado-aberto', compact('chamado'));
+    }
+
+    public function updateChamadoAberto(Request $request, Chamado $chamado)
+    {
+        $request->validate([
+            'titulo'        => 'required',
+            'prioridade'    => 'required',
+            'descricao'     => 'required',
+            'status'        => 'required',
+        ]);
+
+        $id_usuario = Auth::id();
+
+        $chamado->update([
+            'titulo'        => $request->get('titulo'),
+            'prioridade'    => $request->get('prioridade'),
+            'descricao'     => $request->get('descricao'),
+            'status'        => $request->get('status'),
+            'id_usuario'    => $id_usuario,
+        ]);
+
+        return redirect()->route('chamados-abertos')
+                        ->with('success', 'Chamado atualizado com sucesso!');
+    }
+
+    public function editChamadoFechado(Chamado $chamado)
+    {
+        return view('chamados.edit-chamado-fechado', compact('chamado'));
+    }
+
+    public function updateChamadoConcluido(Request $request, Chamado $chamado)
+    {
+        $request->validate([
+            'titulo'        => 'required',
+            'prioridade'    => 'required',
+            'descricao'     => 'required',
+            'status'        => 'required',
+        ]);
+
+        $id_usuario = Auth::id();
+
+        $chamado->update([
+            'titulo'        => $request->get('titulo'),
+            'prioridade'    => $request->get('prioridade'),
+            'descricao'     => $request->get('descricao'),
+            'status'        => $request->get('status'),
+            'id_usuario'    => $id_usuario,
+        ]);
+
+        return redirect()->route('chamados-concluidos')
+                        ->with('success', 'Chamado atualizado com sucesso!');
+    }
 }

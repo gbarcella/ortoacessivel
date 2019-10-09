@@ -50,7 +50,7 @@
                     <th scope="col">Descrição</th>
                     <th scope="col">Status</th>
                     <th scope="col">Solicitante</th>
-                    <th width="60px">Ações</th>
+                    <th width="100px">Ações</th>
                 </tr>
             </thead>
             <tbody>
@@ -66,6 +66,9 @@
                         <form action="{{ route('destroy-chamado', $c->id)}}" method="POST">
                             @csrf
                             @method('DELETE')
+
+                            <a class="btn btn-primary" href="{{ route('edit-chamado-fechado',$c->id) }}"><i class="fa fa-edit"></i></a> 
+                        
                             <button class="btn btn-danger"
                                 onclick="return confirm('Tem certeza que deseja deletar o registro?')"><i
                                     class="fa fa-trash"></i></a></button>
