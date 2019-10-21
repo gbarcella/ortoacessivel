@@ -10,456 +10,309 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
-    <!-- Bootstrap 4.1.3 !-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
     <!-- Favicon -->
-    <link rel="shortcut icon" href="http://otranscribe.com/favicon.png" />
+    <link rel="shortcut icon" href="{{ asset('images/logo_white.png') }}"/>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Styles -->
     <style>
-        .register {
-            background: -webkit-linear-gradient(left, #329AF7, #0E62CC);
-            margin-top: 3%;
-            padding: 3%;
-            margin-top: 0px;
+        .masthead {
+            height: auto;
+            min-height: 500px;
+            background-color: #e6e6e6;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
-        .register-left {
-            text-align: center;
-            color: #fff;
-            margin-top: 4%;
+        @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-font-smoothing: antialiased;
+            -o-font-smoothing: antialiased;
+            font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
         }
 
-        .register-left input {
-            border: none;
-            border-radius: 1.5rem;
-            padding: 2%;
-            width: 60%;
-            background: #f8f9fa;
-            font-weight: bold;
-            color: #383d41;
-            margin-top: 30%;
-            margin-bottom: 3%;
-            cursor: pointer;
+        #contact input[type="text"],
+        #contact input[type="email"],
+        #contact input[type="tel"],
+        #contact input[type="url"],
+        #contact textarea,
+        #contact button[type="submit"] {
+            font: 400 12px/16px "Roboto", Helvetica, Arial, sans-serif;
         }
 
-        .register-right {
-            background: #f8f9fa;
-            border-top-left-radius: 10% 50%;
-            border-bottom-left-radius: 10% 50%;
+        #contact {
+            background: #F9F9F9;
+            padding: 25px;
+            margin: 150px 0;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
         }
 
-        .register-left img {
-            margin-top: 15%;
-            margin-bottom: 5%;
-            width: 25%;
-            -webkit-animation: mover 2s infinite alternate;
-            animation: mover 1s infinite alternate;
+        #contact h3 {
+            display: block;
+            font-size: 30px;
+            font-weight: 300;
+            margin-bottom: 10px;
         }
 
-        @-webkit-keyframes mover {
-            0% {
-                transform: translateY(0);
-            }
-
-            100% {
-                transform: translateY(-20px);
-            }
+        #contact h4 {
+            margin: 5px 0 15px;
+            display: block;
+            font-size: 13px;
+            font-weight: 400;
         }
 
-        @keyframes mover {
-            0% {
-                transform: translateY(0);
-            }
-
-            100% {
-                transform: translateY(-20px);
-            }
+        fieldset {
+            border: medium none !important;
+            margin: 0 0 10px;
+            min-width: 100%;
+            padding: 0;
+            width: 100%;
         }
 
-        .register-left p {
-            font-weight: lighter;
-            padding: 12%;
-            margin-top: -9%;
+        #contact input[type="text"],
+        #contact input[type="email"],
+        #contact input[type="tel"],
+        #contact input[type="url"],
+        #contact select,
+        #contact textarea {
+            width: 100%;
+            border: 1px solid #ccc;
+            background: #FFF;
+            margin: 0 0 5px;
+            padding: 10px;
         }
 
-        .register .register-form {
-            padding: 10%;
-            margin-top: 10%;
+        #contact input[type="text"]:hover,
+        #contact select:hover,
+        #contact input[type="email"]:hover,
+        #contact input[type="tel"]:hover,
+        #contact input[type="url"]:hover,
+        #contact textarea:hover {
+            -webkit-transition: border-color 0.3s ease-in-out;
+            -moz-transition: border-color 0.3s ease-in-out;
+            transition: border-color 0.3s ease-in-out;
+            border: 1px solid #aaa;
+        }
+
+        #contact textarea {
+            height: 100px;
+            max-width: 100%;
+            resize: none;
         }
 
         .btnRegister {
-            float: left;
-            margin-top: 10%;
-            border: none;
-            border-radius: 1.5rem;
-            padding: 2%;
-            background: #0062cc;
-            color: #fff;
-            font-weight: 600;
-            width: 50%;
             cursor: pointer;
-        }
-
-        .register .nav-tabs {
-            margin-top: 3%;
-            border: none;
-            background: #0062cc;
-            border-radius: 1.5rem;
-            width: 28%;
-            float: right;
-        }
-
-        .register .nav-tabs .nav-link {
-            padding: 2%;
-            height: 34px;
-            font-weight: 600;
-            color: #fff;
-            border-top-right-radius: 1.5rem;
-            border-bottom-right-radius: 1.5rem;
-        }
-
-        .register .nav-tabs .nav-link:hover {
-            border: none;
-        }
-
-        .register .nav-tabs .nav-link.active {
-            width: 100px;
-            color: #0062cc;
-            border: 2px solid #0062cc;
-            border-top-left-radius: 1.5rem;
-            border-bottom-left-radius: 1.5rem;
-        }
-
-        .register-heading {
-            text-align: center;
-            margin-top: 8%;
-            margin-bottom: -15%;
-            color: #495057;
-        }
-
-        h1,
-        h2 {
-            font-weight: bold;
-        }
-
-        p {
-            font-size: 16px;
-            color: #fff;
-        }
-
-        .jumbotron {
-            background-image: url("../images/jumbotron.png");
-            background-size: contain;
-            background-repeat: no-repeat;
-            color: white;
-            background-color: #F8F9FA;
-            text-align: center;
-
-        }
-
-        .jumbotron p {
-            color: #000;
-            font-size: 40px;
-        }
-
-        .btn-primary {
-            color: #fff;
-            background-color: #329AF7;
-            border-color: #333;
-            margin-bottom: 5px;
-        }
-
-        .btn-primary:hover {
-            color: #000;
-            background-color: white;
-            border-color: #000;
-        }
-
-        .btn-primary-login {
-            color: #fff;
-            background-color: transparent;
-            border-color: #fff;
-            margin-bottom: 5px;
-        }
-
-        .btn-primary-login:hover {
-            color: #000;
-            background-color: white;
-            border-color: #fff;
-        }
-
-        @media (min-width: 1025px) and (max-width: 1280px) {
-
-            .jumbotron {
-                background-color: #F8F9FA;
-                background-image: none;
-            }
-        }
-
-        @media (min-width: 768px) and (max-width: 1024px) {
-
-            .jumbotron {
-                background-color: #F8F9FA;
-                background-image: none;
-            }
-
-        }
-
-        @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-
-            .jumbotron {
-                background-color: #F8F9FA;
-                background-image: none;
-            }
-
-        }
-
-        @media (min-width: 481px) and (max-width: 767px) {
-
-            .jumbotron {
-                background-color: #F8F9FA;
-                background-image: none;
-            }
-
-        }
-
-        @media (min-width: 320px) and (max-width: 480px) {
-
-            .jumbotron {
-                background-color: #F8F9FA;
-                background-image: none;
-            }
-
-        }
-
-        .footer {
-            position: fixed;
-            left: 0;
-            bottom: 0;
             width: 100%;
-            background-color: #333;
-            color: white;
-            text-align: center;
+            border: none;
+            background: #9d1ec7;
+            color: #FFF;
+            margin: 0 0 5px;
+            padding: 10px;
+            font-size: 15px;
+        }
+
+        .btnRegister:hover {
+            background: #43A047;
+            -webkit-transition: background 0.3s ease-in-out;
+            -moz-transition: background 0.3s ease-in-out;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        #contact button[type="submit"] {
+            cursor: pointer;
+            width: 100%;
+            border: none;
+            background: #9d1ec7;
+            color: #FFF;
+            margin: 0 0 5px;
+            padding: 10px;
+            font-size: 15px;
+        }
+
+        #contact button[type="submit"]:hover {
+            background: #43A047;
+            -webkit-transition: background 0.3s ease-in-out;
+            -moz-transition: background 0.3s ease-in-out;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        #contact button[type="submit"]:active {
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        #contact input:focus,
+        #contact textarea:focus {
+            outline: 0;
+            border: 1px solid #aaa;
+        }
+
+        ::-webkit-input-placeholder {
+            color: #888;
+        }
+
+        :-moz-placeholder {
+            color: #888;
+        }
+
+        ::-moz-placeholder {
+            color: #888;
+        }
+
+        :-ms-input-placeholder {
+            color: #888;
+        }
+
+        .btn:hover {
+            background-color: #43A047 !important;
+            color: #fff !important;
         }
     </style>
+
+
 </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark  fixed-top" style="background-color: #329AF7;">
-        <a class="navbar-brand" href="#">Ortoacessível</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+<body style="padding-top: 70px; background-color: #e6e6e6">
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Início <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#sobre-nos">Sobre</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#solicitacao_produto">Solicitar Produto</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#sou-orgao">Sou um Órgão</a>
-                </li>
-            </ul>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark shadow fixed-top" style="z-index: 9999; background-color: rgba(159, 65, 199);">
+        <div class="container">
+            <a class="navbar-brand" href="#" style="color: #fff;">Ortoacessível</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Início
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#solicitar-produto">Solicitar Produto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sou Órgão</a>
+                    </li>
 
-            @if (Route::has('login'))
-            @auth
-            <a class="btn btn-primary-login my-2 my-sm-0" href="{{ url('/home') }}">Painel Administrativo</a>
-            @else
-            <a class="btn btn-primary-login my-2 my-sm-0" href="{{ route('login') }}">Login</a>
-            @endauth
+                    @if (Route::has('login'))
+                    @auth
+                    <li class="nav-item">
+                        <a class="nav-link btn" style="border-radius: 25px; color: #fff; background-color: #79309B;"
+                            href="{{ url('/home') }}">Painel Administrativo</a>
+                    </li>
+                    @else
+                    <li class="nav-item">
 
-            @endif
+                        <a class="nav-item btn " style="border-radius: 25px; color: #fff; background-color: #79309B;"
+                            href="{{ route('login') }}">Login</a>
+                    </li>
+
+                    @endauth
+
+                    @endif
+                </ul>
+            </div>
         </div>
     </nav>
 
-    <br>
-    <br>
-
-    @if ($message = Session::get('success'))
-    <div class="alert alert-success" style=" background-color: green;">
-        <p>{{ $message }}</p>
-    </div>
-    @endif
-
-    @if ($message = Session::get('failed'))
-    <div class="alert alert-danger" style="background-color: red;">
-        <p>{{ $message }}</p>
-    </div>
-    @endif
-
-    <div class="jumbotron">
-        <div class="container">
-            <h1 class="headline" style="color: #000;">Software Ortoacessível</h1>
-            <p>A ferramenta ideal para gerenciar pedidos de produtos ortopédicos em secretarias de saúde.</p>
-            <br>
-            <p><a class="btn btn-primary btn-lg" href="#sobre-nos" role="button">Saiba Mais &raquo;</a> <a
-                    class="btn btn-primary btn-lg" href="#solicitacao_produto" role="button">Solicitar Produto
-                    &raquo;</a></p>
-        </div>
-        <br>
-        <br>
-    </div>
-
-    <div class="container-fluid" id="sobre-nos" style="padding: 3%; background-color: #fff; margin-top: -33px;">
-        <div class="row">
-            <div class="col-md-6">
-                <hr style="background-color: #000;" />
-                <h1>Sobre Nós</h1>
-                <p style="color: #333;">
-                    O software <b>Ortoacessível</b> auxilia secretarias de saúde a gerenciar
-                    pedidos de empréstimos de produtos ortopédicos. As atividades de cadastrar
-                    pessoas, produtos, parceiros, empréstimos, tarefas e interesses muitas vezes
-                    é feita de forma manual, então, o software é ideal para agilizar todas essas tarefas,
-                    aumentando o controle e eficiência desse processo.
-                </p>
-
-                <a class="btn btn-success btn-lg" href="#sou-orgao"
-                    style="background-color: #329AF7; color: #fff;">Quero
-                    utilizar o sistema!</a>
-                <hr style="background-color: #000;" />
-            </div>
-
-            <div class="col-md-6">
-                <img class="img-fluid" style="width: 300px; heigth: 300px; float: right;"
-                    src="https://yata.ostr.locaweb.com.br/d59940a9b87dc90f5ff5b39a60d9c995ca554a16f6b96c66c4ec6b0e43e410bd">
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid register" id="solicitacao_produto">
-        <div class="row">
-            <div class="col-md-3 register-left">
-                <img src="{{URL::asset('/images/wheelchair-interesse.png')}}" alt="" />
-                <h3>Olá!</h3>
-                <p>Registre o seu interesse em uma das organizações disponíveis!</p>
-            </div>
-            <div class="col-md-9 register-right">
-
-                <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <h3 class="register-heading">Registre seu interesse!</h3>
-                        <form action="/store-interesse-website" method="POST">
-                            @csrf
-                            <div class="row register-form">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <select id="input_orgao" class="form-control" name="orgao" required>
-                                            <option selected disabled value="">Escolha um órgão...</option>
-                                            @foreach($orgaos as $o)
-                                            <option value="{{ $o->id }}">{{ $o->name }}
-                                            </option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" name="nome1" class="form-control" placeholder="Nome *"
-                                            required />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" name="telefone1" class="form-control"
-                                            placeholder="Telefone *" required />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" name="interesse" class="form-control"
-                                            placeholder="Produto de Interesse *" required />
-                                    </div>
-
-                                    <input type="submit" class="btnRegister" value="Registrar" />
-                                </div>
-
-                            </div>
-                        </form>
-
-                    </div>
+    <!-- Full Page Image Header with Vertically Centered Content -->
+    <header class="masthead" id="solicitar-produto">
+        <div class="container-fluid h-100 ">
+            <div class="row  align-items-center">
+                <div class="col-sm text-center">
+                    <img id="logo_intro" src="{{ asset('images/logo_transparent.png') }}" class="img-fluid" style="width: 100px; heigth: 120px;" />
+                    <h1 class="font-weight-dark">Ortoacessível</h1>
+                    <p class="lead">O lugar ideal para solicitar seu produto ortopédico diretamente em órgãos
+                        competentes, de forma rápida e extremamente fácil.</p>
+                    <button class="btn btn-lg" style="background-color:#9d1ec7; color: #fff; width: 50%;">Saiba mais</button>
                 </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="container-fluid" style="display: grid;
-    place-content: center;
-    height: 20vh;
-    background: #0E62CC;
-    font-family: 'Red Hat Display', sans-serif;">
-        <h1 style="font-size: 4vw;
-            max-width: 75vw;
-            color: #fefefe;">
-            <span style=" background-image: linear-gradient(transparent calc(65% - 5px), #000cc4 5px);
-                    background-size: 0;
-                    background-repeat: no-repeat;
-                    display: inline;
-                    transition: 0.5s ease;">Software Ortoacessível</span>
-        </h1>
-    </div>
+                <div class="col-sm text-center">
 
-
-    <div class="container-fluid" style="background-color: #F8F9FA;">
-        <div class="container" id="sou-orgao" style="padding: 20px;">
-            <div class="card card-outline-secondary">
-                <div class="card-header" style="background-color: #3197F5; color: #fff;">
-                    <h3 class="mb-0">Quero utilizar o sistema na minha organização!</h3>
-                </div>
-                <div class="card-body">
-                    <form class="form" role="form" autocomplete="off" action="/store-solicitacao" method="post">
+                    <form id="contact" action="/store-interesse-website" method="POST">
                         @csrf
-                        @method('post')
-                        <fieldset>
-                            <label for="nome2" class="mb-0">Nome</label>
-                            <div class="row mb-1">
-                                <div class="col-lg-12">
-                                    <input type="text" name="nome2" id="name2" placeholder="Nome" class="form-control"
-                                        required="">
+
+                        <h3>Registrar interesse</h3>
+                        <h4>Seus dados serão enviados diretamente para o órgão escolhido</h4>
+                        @if ($message = Session::get('success_interesse'))
+                        <div class="alert alert-success" style=" ">
+                            <p>{{ $message }}</p>
+                        </div>
+                        @endif
+                        <div class="row register-form">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <select id="input_orgao" class="form-control" name="orgao" required>
+                                        <option selected disabled value="">Escolha um órgão...</option>
+                                        @foreach($orgaos as $o)
+                                        <option value="{{ $o->id }}">{{ $o->name }}
+                                        </option>
+                                        @endforeach
+                                    </select>
                                 </div>
-                            </div>
-                            <label for="email2" class="mb-0">Email</label>
-                            <div class="row mb-1">
-                                <div class="col-lg-12">
-                                    <input type="text" name="email2" id="email2" placeholder="E-mail"
-                                        class="form-control" required="">
+                                <div class="form-group">
+                                    <input type="text" name="nome1" class="form-control" placeholder="Nome *"
+                                        required />
                                 </div>
-                            </div>
-                            <label for="telefone2" class="mb-0">Telefone</label>
-                            <div class="row mb-1">
-                                <div class="col-lg-12">
-                                    <input type="text" name="telefone2" id="telefone2" placeholder="Telefone"
-                                        class="form-control telefone2" required="">
+                                <div class="form-group">
+                                    <input type="text" name="telefone1" class="form-control" placeholder="Telefone *"
+                                        required />
                                 </div>
-                            </div>
-                            <label for="message2" class="mb-0">Mensagem</label>
-                            <div class="row mb-1">
-                                <div class="col-lg-12">
-                                    <textarea rows="6" name="mensagem2" id="message2" class="form-control"
-                                        required=""></textarea>
+                                <div class="form-group">
+                                    <input type="text" name="interesse" class="form-control"
+                                        placeholder="Produto de Interesse *" required />
                                 </div>
+
+                                <input type="submit" class="btnRegister" value="Registrar" />
                             </div>
-                            <button type="submit" style="width: 100%;" class="btn btn-primary btn-lg float-right">Enviar
-                                Solicitação</button>
-                        </fieldset>
+
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
+    </header>
+
+    <div class="container-fluid my-4" id="sobre">
+
+        <div class="card card-image" style="background-color: rgba(159, 65, 199, 0.8)">
+            <div class="text-white text-center py-3 px-3 my-3">
+                <div>
+                    <h2 class="card-title h1-responsive pt-3 mb-4 font-bold"><strong>Sobre Nós</strong></h2>
+                    <hr class="mx-5" style="background-color: #79309B;"/>
+                    <p class="mx-5 mb-5" style="font-size: 20px;">O Ortoacessível é uma plataforma onde diversos órgãos competentes, tais como 
+                        secretarias de saúde, gerenciam seus pedidos de produtos ortopédicos. Tendo em vista a dificuldade financeira
+                        que muitas pessoas possuem ao adquirir um produto desta categoria, a plataforma permite que você registre seu 
+                        objeto de interesse diretamente nos órgãos competentes de sua proximidade.
+                    </p>
+                    <a href="#solicitar-produto" class="btn btn-outline btn-lg shadow-lg btn-solicitar-produto" 
+                    style="border-radius: 50px; background-color: #79309B; color: #fff; width: 30%;">Solicitar Produto</a>
+                    <a href="#sou-orgao" class="btn btn-outline btn-lg shadow-lg btn-solicitar-produto" 
+                    style="border-radius: 50px; background-color: #79309B; color: #fff; width: 30%;">Sou Órgão</a>
+                </div>
+            </div>
+        </div>
+
     </div>
 
-    <br>
-    <br>
-    <div class="footer">
-        <a href="https://github.com/gbarcella/ortoacessivel">
-            <p>Ortoacessível &copy; Copyrigth, 2019.</p>
-        </a>
-    </div>
 
-
+   
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

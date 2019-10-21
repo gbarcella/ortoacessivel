@@ -33,7 +33,7 @@ class SiteController extends Controller
         ]);
         
         return redirect()->route('/')
-                        ->with('success', 'Interesse cadastrado com sucesso!');
+                        ->with('success_interesse', 'Interesse cadastrado com sucesso!');
     }
 
     public function storeSolicitacao(Request $request)
