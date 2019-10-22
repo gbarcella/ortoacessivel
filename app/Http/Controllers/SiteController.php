@@ -53,6 +53,6 @@ class SiteController extends Controller
         ]);
 
         return redirect()->route('/')
-                        ->with('success', 'Solicitação cadastrada com sucesso!');
+                        ->with('succcess_solitacao', 'Solicitação cadastrada com sucesso!');
     }
 }

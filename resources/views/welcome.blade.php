@@ -207,7 +207,7 @@
                         <a class="nav-link" href="#solicitar-produto">Solicitar Produto</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Sou Órgão</a>
+                        <a class="nav-link" href="#sou-orgao">Sou Órgão</a>
                     </li>
 
                     @if (Route::has('login'))
@@ -310,6 +310,61 @@
         </div>
 
     </div>
+
+     <!-- Full Page Image Header with Vertically Centered Content -->
+     <header class="masthead" id="sou-orgao">
+        <div class="container-fluid h-100 ">
+            <div class="row  align-items-center">
+                <div class="col-sm text-center">
+                    <form id="contact" action="/store-solicitacao" method="POST">
+                        @csrf
+
+                        <h3>Solicitar Acesso</h3>
+                        <h4>Seus dados serão enviados diretamente aos administradores do sistema.</h4>
+                        @if ($message = Session::get('succcess_solitacao'))
+                        <div class="alert alert-success" style=" ">
+                            <p>{{ $message }}</p>
+                        </div>
+                        @endif
+                        <div class="row register-form">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="text" name="nome2" id="name2" placeholder="Nome *" class="form-control"
+                                        required="">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="email2" id="email2" placeholder="E-mail *"
+                                        class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="telefone2" id="telefone2" placeholder="Telefone *"
+                                        class="form-control telefone2" required>
+                                </div>
+                                <div class="form-group">
+                                    <textarea rows="6" name="mensagem2" id="message2" class="form-control" placeholder="A sua mensagem"
+                                        required></textarea>
+                                </div>
+
+                                <input type="submit" class="btnRegister" value="Registrar" />
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+
+                <div class="col-sm text-center">
+
+                    <img id="logo_intro" src="{{ asset('images/grafico-verde.png') }}" class="img-fluid" style="width: 150px; heigth: 170px;" />
+                    <h1 class="font-weight-dark">Gerencie seus pedidos</h1>
+                    <p class="lead">Tenha todas informações sobre seus parceiros, produtos, pessoas e empréstimos sobre controle,
+                        de qualquer lugar e em qualquer dispositivo conectado a internet.</p>
+                    <button class="btn btn-lg" style="background-color:#9d1ec7; color: #fff; width: 50%;">Vantagens</button>
+
+                    
+                </div>
+            </div>
+        </div>
+    </header>
 
 
    
