@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Interesse;
 use App\Solicitacao;
+use App\Emprestimo;
+use App\Produto;
+use App\Pessoa;
 
 class SiteController extends Controller
 {
@@ -13,7 +16,16 @@ class SiteController extends Controller
     {
         $orgaos = User::where('role', '!=', 'admin')->get();
 
-        return view('welcome', compact('orgaos'));
+        $emprestimos = Emprestimo::all();
+        $count_emprestimos = count($emprestimos);
+
+        $produtos = Produto::all();
+        $count_produtos = count($produtos);
+
+        $pessoas = Pessoa::all();
+        $count_pessoas = count($pessoas);
+
+        return view('welcome', compact('orgaos', 'count_emprestimos', 'count_produtos', 'count_pessoas'));
     }
 
     public function storeInteresse(Request $request) 

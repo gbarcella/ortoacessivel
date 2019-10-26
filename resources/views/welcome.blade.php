@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ asset('images/logo_white.png') }}"/>
+    <link rel="shortcut icon" href="{{ asset('images/logo_white.png') }}" />
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -178,6 +178,45 @@
             background-color: #43A047 !important;
             color: #fff !important;
         }
+
+        .counter-box {
+    display: block;
+    background: #f6f6f6;
+    padding: 40px 20px 37px;
+    text-align: center
+}
+
+.counter-box p {
+    margin: 5px 0 0;
+    padding: 0;
+    color: #909090;
+    font-size: 18px;
+    font-weight: 500
+}
+
+.counter-box i {
+    font-size: 60px;
+    margin: 0 0 15px;
+    color: #d2d2d2
+}
+
+.counter {
+    display: block;
+    font-size: 32px;
+    font-weight: 700;
+    color: #666;
+    line-height: 28px;
+}
+
+.counter-box.colored {
+    background: #79309B;
+}
+
+.counter-box.colored p,
+.counter-box.colored i,
+.counter-box.colored .counter {
+    color: #fff
+}
     </style>
 
 
@@ -186,7 +225,8 @@
 <body style="padding-top: 70px; background-color: #e6e6e6">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark shadow fixed-top" style="z-index: 9999; background-color: rgba(159, 65, 199);">
+    <nav class="navbar navbar-expand-lg navbar-dark shadow fixed-top"
+        style="z-index: 9999; background-color: rgba(159, 65, 199);">
         <div class="container">
             <a class="navbar-brand" href="#" style="color: #fff;">Ortoacessível</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
@@ -236,11 +276,13 @@
         <div class="container-fluid h-100 ">
             <div class="row  align-items-center">
                 <div class="col-sm text-center">
-                    <img id="logo_intro" src="{{ asset('images/logo_transparent.png') }}" class="img-fluid" style="width: 100px; heigth: 120px;" />
+                    <img id="logo_intro" src="{{ asset('images/logo_transparent.png') }}" class="img-fluid"
+                        style="width: 100px; heigth: 120px;" />
                     <h1 class="font-weight-dark">Ortoacessível</h1>
                     <p class="lead">O lugar ideal para solicitar seu produto ortopédico diretamente em órgãos
                         competentes, de forma rápida e extremamente fácil.</p>
-                    <button class="btn btn-lg" style="background-color:#9d1ec7; color: #fff; width: 50%;">Saiba mais</button>
+                    <button class="btn btn-lg" style="background-color:#9d1ec7; color: #fff; width: 50%;">Saiba
+                        mais</button>
                 </div>
 
                 <div class="col-sm text-center">
@@ -295,24 +337,53 @@
             <div class="text-white text-center py-3 px-3 my-3">
                 <div>
                     <h2 class="card-title h1-responsive pt-3 mb-4 font-bold"><strong>Sobre Nós</strong></h2>
-                    <hr class="mx-5" style="background-color: #79309B;"/>
-                    <p class="mx-5 mb-5" style="font-size: 20px;">O Ortoacessível é uma plataforma onde diversos órgãos competentes, tais como 
-                        secretarias de saúde, gerenciam seus pedidos de produtos ortopédicos. Tendo em vista a dificuldade financeira
-                        que muitas pessoas possuem ao adquirir um produto desta categoria, a plataforma permite que você registre seu 
+                    <hr class="mx-5" style="background-color: #79309B;" />
+                    <p class="mx-5 mb-5" style="font-size: 20px;">O Ortoacessível é uma plataforma onde diversos órgãos
+                        competentes, tais como
+                        secretarias de saúde, gerenciam seus pedidos de produtos ortopédicos. Tendo em vista a
+                        dificuldade financeira
+                        que muitas pessoas possuem ao adquirir um produto desta categoria, a plataforma permite que você
+                        registre seu
                         objeto de interesse diretamente nos órgãos competentes de sua proximidade.
                     </p>
-                    <a href="#solicitar-produto" class="btn btn-outline btn-lg shadow-lg btn-solicitar-produto" 
-                    style="border-radius: 50px; background-color: #79309B; color: #fff; width: 30%;">Solicitar Produto</a>
-                    <a href="#sou-orgao" class="btn btn-outline btn-lg shadow-lg btn-solicitar-produto" 
-                    style="border-radius: 50px; background-color: #79309B; color: #fff; width: 30%;">Sou Órgão</a>
+                    <a href="#solicitar-produto" class="btn btn-outline btn-lg shadow-lg btn-solicitar-produto"
+                        style="border-radius: 50px; background-color: #79309B; color: #fff; width: 30%;">Solicitar
+                        Produto</a>
+                    <a href="#sou-orgao" class="btn btn-outline btn-lg shadow-lg btn-solicitar-produto"
+                        style="border-radius: 50px; background-color: #79309B; color: #fff; width: 30%;">Sou Órgão</a>
                 </div>
             </div>
         </div>
 
     </div>
 
-     <!-- Full Page Image Header with Vertically Centered Content -->
-     <header class="masthead" id="sou-orgao">
+
+    <div class="container">
+            <div class="row">
+                <div class="four col-md-4">
+                    <div class="counter-box colored"> <i class="fa fa-thumbs-o-up"></i> <span class="counter">{{$count_emprestimos}}</span>
+                        <p>Empréstimos Cadastrados</p>
+                    </div>
+                </div>
+                <div class="four col-md-4">
+                    <div class="counter-box"> <i class="fa fa-group"></i> <span class="counter">{{$count_produtos}}</span>
+                        <p>Produtos Cadastrados</p>
+                    </div>
+                </div>
+                <div class="four col-md-4">
+                    <div class="counter-box"> <i class="fa fa-shopping-cart"></i> <span class="counter">{{$count_pessoas}}</span>
+                        <p>Beneficiados Cadastrados</p>
+                    </div>
+                </div>
+            
+            </div>
+           
+        </div>
+
+
+
+    <!-- Full Page Image Header with Vertically Centered Content -->
+    <header class="masthead" id="sou-orgao">
         <div class="container-fluid h-100 ">
             <div class="row  align-items-center">
                 <div class="col-sm text-center">
@@ -341,8 +412,8 @@
                                         class="form-control telefone2" required>
                                 </div>
                                 <div class="form-group">
-                                    <textarea rows="6" name="mensagem2" id="message2" class="form-control" placeholder="A sua mensagem"
-                                        required></textarea>
+                                    <textarea rows="6" name="mensagem2" id="message2" class="form-control"
+                                        placeholder="A sua mensagem" required></textarea>
                                 </div>
 
                                 <input type="submit" class="btnRegister" value="Registrar" />
@@ -354,20 +425,54 @@
 
                 <div class="col-sm text-center">
 
-                    <img id="logo_intro" src="{{ asset('images/grafico-verde.png') }}" class="img-fluid" style="width: 150px; heigth: 170px;" />
+                    <img id="logo_intro" src="{{ asset('images/grafico-verde.png') }}" class="img-fluid"
+                        style="width: 150px; heigth: 170px;" />
                     <h1 class="font-weight-dark">Gerencie seus pedidos</h1>
-                    <p class="lead">Tenha todas informações sobre seus parceiros, produtos, pessoas e empréstimos sobre controle,
+                    <p class="lead">Tenha todas informações sobre seus parceiros, produtos, pessoas e empréstimos sobre
+                        controle,
                         de qualquer lugar e em qualquer dispositivo conectado a internet.</p>
-                    <button class="btn btn-lg" style="background-color:#9d1ec7; color: #fff; width: 50%;">Vantagens</button>
+                    <button class="btn btn-lg"
+                        style="background-color:#9d1ec7; color: #fff; width: 50%;">Vantagens</button>
 
-                    
+
                 </div>
             </div>
         </div>
+        
     </header>
 
 
-   
+    <!-- Footer -->
+    <footer class="page-footer font-small blue" style="margin-top: 10px;">
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3" style="background-color: #9F41C7; color: #fff;">© 2018 Copyright Ortoacessível
+            
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+
+
+    <script>
+    $(document).ready(function() {
+
+$('.counter').each(function () {
+$(this).prop('Counter',0).animate({
+Counter: $(this).text()
+}, {
+duration: 4000,
+easing: 'swing',
+step: function (now) {
+    $(this).text(Math.ceil(now));
+}
+});
+});
+
+});  
+    </script>
+
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
