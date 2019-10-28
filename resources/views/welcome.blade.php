@@ -217,6 +217,63 @@
 .counter-box.colored .counter {
     color: #fff
 }
+
+.wrap {
+    display: flex;
+    background: white;
+    padding: 1rem 1rem 1rem 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 7px 7px 30px -5px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.wrap:hover {
+    background: linear-gradient(135deg,#9963cf 0%,#6e39a3 100%);
+    color: white;
+}
+
+.ico-wrap {
+    margin: auto;
+}
+
+.mbr-iconfont {
+    font-size: 4.5rem !important;
+    color: #313131;
+    margin: 1rem;
+    padding-right: 1rem;
+}
+.vcenter {
+    margin: auto;
+}
+
+.mbr-section-title3 {
+    text-align: left;
+}
+h2 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.display-5 {
+    font-family: 'Source Sans Pro',sans-serif;
+    font-size: 1.4rem;
+}
+.mbr-bold {
+    font-weight: 700;
+}
+
+ p {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    line-height: 25px;
+}
+.display-6 {
+    font-family: 'Source Sans Pro',sans-serif;
+    font-size: 1rem
+    }
+    section {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
     </style>
 
 
@@ -361,17 +418,17 @@
     <div class="container">
             <div class="row">
                 <div class="four col-md-4">
-                    <div class="counter-box colored"> <i class="fa fa-thumbs-o-up"></i> <span class="counter">{{$count_emprestimos}}</span>
+                    <div class="counter-box colored">  <span class="counter">{{$count_emprestimos}}</span>
                         <p>Empréstimos Cadastrados</p>
                     </div>
                 </div>
                 <div class="four col-md-4">
-                    <div class="counter-box"> <i class="fa fa-group"></i> <span class="counter">{{$count_produtos}}</span>
+                    <div class="counter-box"><span class="counter">{{$count_produtos}}</span>
                         <p>Produtos Cadastrados</p>
                     </div>
                 </div>
                 <div class="four col-md-4">
-                    <div class="counter-box"> <i class="fa fa-shopping-cart"></i> <span class="counter">{{$count_pessoas}}</span>
+                    <div class="counter-box"> <span class="counter">{{$count_pessoas}}</span>
                         <p>Beneficiados Cadastrados</p>
                     </div>
                 </div>
@@ -431,8 +488,8 @@
                     <p class="lead">Tenha todas informações sobre seus parceiros, produtos, pessoas e empréstimos sobre
                         controle,
                         de qualquer lugar e em qualquer dispositivo conectado a internet.</p>
-                    <button class="btn btn-lg"
-                        style="background-color:#9d1ec7; color: #fff; width: 50%;">Vantagens</button>
+                    <a class="btn btn-lg"
+                        style="background-color:#9d1ec7; color: #fff; width: 50%;" href="#vantagens">Vantagens</a>
 
 
                 </div>
@@ -440,6 +497,70 @@
         </div>
         
     </header>
+
+    <section id="vantagens">
+        <div class="container">
+        
+            
+                <div class="row mbr-justify-content-center">
+        
+                    <div class="col-lg-6 mbr-col-md-10">
+                        <div class="wrap">
+                            <div class="ico-wrap">
+                                <span class="mbr-iconfont fas fa-calendar-day"></span>
+                            </div>
+                            <div class="text-wrap vcenter">
+                                <h2 class="mbr-fonts-style mbr-bold mbr-section-title3 display-5">Gerencie seus <span>Empréstimos</span></h2>
+                                <p class="mbr-fonts-style text1 mbr-text display-6">Tenha total controle sobre quando inicia e acaba cada empréstimo.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mbr-col-md-10">
+                        <div class="wrap">
+                            <div class="ico-wrap">
+                                <span class="mbr-iconfont fas fa-users"></span>
+                            </div>
+                            <div class="text-wrap vcenter">
+                                <h2 class="mbr-fonts-style mbr-bold mbr-section-title3 display-5">Cadastre
+                                    <span>Pessoas</span>
+                                </h2>
+                                <p class="mbr-fonts-style text1 mbr-text display-6">Esqueça o cadastro manual de pessoas, deixe tudo mais simples e seguro com o digital</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mbr-col-md-10">
+                        <div class="wrap">
+                            <div class="ico-wrap">
+                                <span class="mbr-iconfont fas fa-file-pdf"></span>
+                            </div>
+                            <div class="text-wrap vcenter">
+                                <h2 class="mbr-fonts-style mbr-bold mbr-section-title3 display-5">Gere
+                                    <span>Relatórios</span>
+                                </h2>
+                                <p class="mbr-fonts-style text1 mbr-text display-6">Gere relatórios essenciais para o completo controle de todos os seus dados.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mbr-col-md-10">
+                        <div class="wrap">
+                            <div class="ico-wrap">
+                                <span class="mbr-iconfont fab fa-accessible-icon"></span>
+                            </div>
+                            <div class="text-wrap vcenter">
+                                <h2 class="mbr-fonts-style mbr-bold mbr-section-title3 display-5">Gerencie <span>Produtos</span></h2>
+                                <p class="mbr-fonts-style text1 mbr-text display-6">Tenha na sua tela todos os produtos que o seu órgão disponibiliza.</p>
+                            </div>
+                        </div>
+                    </div>
+        
+                    
+        
+                    
+                </div>
+        
+        </div>
+        
+        </section>
 
 
     <!-- Footer -->
@@ -484,6 +605,8 @@ step: function (now) {
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
     </script>
+    <script src="https://kit.fontawesome.com/a54d1fb2a5.js" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
