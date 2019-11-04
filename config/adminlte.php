@@ -161,6 +161,7 @@ return [
         [
             'text'    => 'Chamados',
             'icon'    => 'fas fa-fw fa-share',
+            'can'     => 'browse-admin',
             'submenu' => [
                 [
                     'text' => 'Abertos',
